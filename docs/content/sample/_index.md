@@ -1,6 +1,6 @@
 +++
-title = "List of blog posts"
-sort_by = "date"
+title = "サンプル"
+sort_by = "weight"
 template = "section.html"
 page_template = "page.html"
 +++
