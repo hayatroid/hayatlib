@@ -1,0 +1,41 @@
+name: Zola on GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref != 'refs/heads/main'
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+      - name: Build only
+        uses: shalzz/zola-deploy-action@v0.19.2
+        env:
+          BUILD_DIR: docs
+          BUILD_ONLY: true
+
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+      - name: Build and deploy
+        uses: shalzz/zola-deploy-action@v0.19.2
+        env:
+          BUILD_DIR: docs
+          BUILD_ONLY: true
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./docs/public"
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
