@@ -44,6 +44,15 @@
     });
   </script>
 
+  <!-- copy button -->
+  <script>
+    const copyToClipboard = (elem) => {
+      const res = elem.nextElementSibling.textContent;
+      navigator.clipboard.writeText(res);
+      elem.textContent = "Copied!";
+    };
+  </script>
+
   <!-- my style -->
   <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
 </head>

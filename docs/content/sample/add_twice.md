@@ -16,6 +16,7 @@ $O(1)$
 - $0 \leq a + b + c < 2^{64}$
 
 ## 実装
+{{ copy_btn() }}
 ```rs
 {{ cat(path="src_bundled/sample/add_twice.rs") }}
 ```
