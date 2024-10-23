@@ -17,5 +17,5 @@ $O(1)$
 ## 実装
 {{ copy_btn() }}
 ```rs
-{{ cat(path="src_bundled/sample/add.rs") }}
+{{ cat(path="src/sample/add.rs") }}
 ```
