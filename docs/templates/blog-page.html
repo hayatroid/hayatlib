@@ -8,6 +8,6 @@
 {{ page.content | safe }}
 
 {% set section = get_section(path=page.ancestors | last) %}
-<p><a href="{{ section.permalink }}">戻る</a></p>
+<p><a href="{{ section.permalink | safe }}">戻る</a></p>
 
 {% endblock content %}

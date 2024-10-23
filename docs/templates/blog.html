@@ -13,6 +13,6 @@
 </ul>
 
 {% set section = get_section(path=section.ancestors | last) %}
-<p><a href="{{ section.permalink }}">戻る</a></p>
+<p><a href="{{ section.permalink | safe }}">戻る</a></p>
 
 {% endblock content %}
