@@ -1,0 +1,6 @@
+{%- if section -%}
+  {{- section.permalink | safe -}}
+{%- else -%}
+  {%- if not page -%} {%- set page = get_page(path="404.md") -%} {%- endif -%}
+  {{- page.permalink | safe -}}
+{%- endif -%}

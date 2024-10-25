@@ -1,5 +1,6 @@
 +++
 title = "3 つの数の和"
+description = "非負整数 a, b, c を受け取り、a + b + c を返します。"
 weight = 2
 +++
 

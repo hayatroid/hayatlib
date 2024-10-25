@@ -2,11 +2,10 @@
 
 {% block content %}
 <h1 class="title">
-  {{ page.title }}
+  {{- page.title -}}
 </h1>
-<p class="subtitle"><strong>{{ page.date }}</strong></p>
 {{ page.content | safe }}
-
-<p><a href="{{ get_url(path='@/_index.md') }}">戻る</a></p>
-
+<p>
+  <a href="{{ get_url(path="@/_index.md") }}">戻る</a>
+</p>
 {% endblock content %}

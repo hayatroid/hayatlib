@@ -2,10 +2,10 @@
 
 {% block content %}
 <h1 class="title">
-  {% set page = get_page(path='404.md') %}
-  {{ page.title }}
+  {%- set page = get_page(path="404.md") -%}
+  {{- page.title -}}
 </h1>
-
-<p><a href="{{ get_url(path='@/_index.md') }}">戻る</a></p>
-
+<p>
+  <a href="{{ get_url(path="@/_index.md") }}">戻る</a>
+</p>
 {% endblock content %}
