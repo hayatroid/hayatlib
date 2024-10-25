@@ -3,8 +3,29 @@
 
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="email=no, telephone=no, address=no">
   <title>{% include "components/title.html" %}</title>
+  <meta name="description" content="{% include "components/description.html" %}">
+  <!--
+  <link rel="icon" href="{{ get_url(path="favicon.ico") }}">
+  <link rel="icon" href="{{ get_url(path="icon.svg") }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ get_url(path="apple-touch-icon.png") }}">
+  -->
+
+  {#- OGP #}
+  <meta property="og:url" content="{% include "components/permalink.html" %}">
+  <meta property="og:title" content="{% include "components/title.html" %}">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="{% include "components/description.html" %}">
+  <!--
+  <meta property="og:image" content="{{ get_url(path="ogp.png") }}">
+  -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@hayatroid">
+  <meta property="og:site_name" content="{% include "components/title.html" %}">
+  <meta property="og:locale" content="ja_JP">
 
   {#- light theme #}
   <link rel="stylesheet" href="{{ get_url(path="sakura.css") }}">

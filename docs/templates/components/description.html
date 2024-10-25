@@ -1,0 +1,6 @@
+{%- if section -%}
+  {{- section.description -}}
+{%- else -%}
+  {%- if not page -%} {%- set page = get_page(path="404.md") -%} {%- endif -%}
+  {{- page.description -}}
+{%- endif -%}
