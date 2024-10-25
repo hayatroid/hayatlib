@@ -4,13 +4,13 @@
 <head>
   <meta charset="utf-8">
   <title>
-    {% set home = get_section(path='_index.md') %}
+    {% set home = get_section(path="_index.md") %}
     {% if section and section == home %}
       {{ home.title }}
     {% else %} {% if section %}
       {{ section.title }} | {{ home.title }}
     {% else %}
-      {% if not page %} {% set page = get_page(path='404.md') %} {% endif %}
+      {% if not page %} {% set page = get_page(path="404.md") %} {% endif %}
       {{ page.title }} | {{ home.title }}
     {% endif %} {% endif %}
   </title>
