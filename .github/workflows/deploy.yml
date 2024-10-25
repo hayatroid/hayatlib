@@ -18,6 +18,16 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
+      - name: Setup rustfmt
+        uses: dtolnay/rust-toolchain@1.70.0
+        with:
+          components: rustfmt
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13' 
+      - name: Run bundle_all.py
+        run: python3 bundle_all.py
       - name: Build only
         uses: shalzz/zola-deploy-action@v0.19.2
         env:
@@ -30,6 +40,16 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v4
+      - name: Setup rustfmt
+        uses: dtolnay/rust-toolchain@1.70.0
+        with:
+          components: rustfmt
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13' 
+      - name: Run bundle_all.py
+        run: python3 bundle_all.py
       - name: Build and deploy
         uses: shalzz/zola-deploy-action@v0.19.2
         env:
