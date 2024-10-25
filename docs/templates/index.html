@@ -4,6 +4,7 @@
 <h1 class="title">
   {{- section.title -}}
 </h1>
+{{ section.content | safe }}
 {%- set section = get_section(path="sample/_index.md") %}
 <h2>
   {{- section.title -}}

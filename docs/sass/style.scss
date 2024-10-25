@@ -7,3 +7,12 @@ h2 {
 code {
   font-family: 'Fira Code', monospace;
 }
+
+.badges {
+  img {
+    margin-bottom: 0;
+  }
+  &:hover {
+    border-bottom: none;
+  }
+}
