@@ -2,17 +2,15 @@
 
 {% block content %}
 <h1 class="title">
-  {{ section.title }}
+  {{- section.title -}}
 </h1>
-
-{% set section = get_section(path="sample/_index.md") %}
+{%- set section = get_section(path="sample/_index.md") %}
 <h2>
   <a href="{{ section.permalink | safe }}">{{ section.title }}</a>
 </h2>
 <ul>
-  {% for page in section.pages %}
+  {%- for page in section.pages %}
   <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
-  {% endfor %}
+  {%- endfor %}
 </ul>
-
 {% endblock content %}
