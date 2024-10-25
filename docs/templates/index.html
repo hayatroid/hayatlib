@@ -6,7 +6,7 @@
 </h1>
 {%- set section = get_section(path="sample/_index.md") %}
 <h2>
-  <a href="{{ section.permalink | safe }}">{{ section.title }}</a>
+  {{- section.title -}}
 </h2>
 <ul>
   {%- for page in section.pages %}
