@@ -9,8 +9,8 @@ from pathlib import Path
 
 # "use crate::a::b::c;" を Path("./src/a/b.rs") にして返す
 def crate_to_path(line: bytes) -> Path:
-    # "use crate" で始まるかチェック
-    assert line.startswith(b"use crate")
+    # "use hayatlib" または "use crate" で始まるかチェック
+    assert line.startswith(b"use hayatlib") or line.startswith(b"use crate")
 
     # "use crate::a::b::c;" を Path("./src/a/b.rs") に
     filepath = Path("./src", *map(lambda x: x.decode(),
@@ -49,9 +49,11 @@ def collect_dependencies(program: list[bytes], path: Path) -> tuple[set[Path], s
     crate_paths = set()
     others = set()
     for line in program:
-        if line.startswith(b"use crate") or line.startswith(b"use super"):
-            crate_path = crate_to_path(line) if line.startswith(
-                b"use crate") else super_to_path(line, path)
+        if line.startswith(b"use hayatlib") or line.startswith(b"use crate") or line.startswith(b"use super"):
+            if line.startswith(b"use hayatlib") or line.startswith(b"use crate"):
+                crate_path = crate_to_path(line)
+            else:
+                crate_path = super_to_path(line, path)
             crate_paths.add(crate_path)
             # 依存するファイルからも再帰的に集めてきて，和集合をとる
             with open(crate_path, "rb") as f:
@@ -107,10 +109,10 @@ def main():
 
     # いい感じに合体
     result = list(others)
+    result += program_without_use(program)
     for crate_path in sorted(crate_paths):
         with open(crate_path, "rb") as f:
             result += program_without_use(f.readlines())
-    result += program_without_use(program)
 
     # imports_granularity=Crate,group_imports=StdExternalCrate で整形
     p = subprocess.run(["rustfmt", "--config", "imports_granularity=Crate,group_imports=StdExternalCrate"],
