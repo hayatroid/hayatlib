@@ -5,7 +5,8 @@
   {{- section.title -}}
 </h1>
 {{ section.content | safe }}
-{%- set section = get_section(path="sample/_index.md") %}
+{%- for section in ["sample"] %}
+{%- set section = get_section(path=section~"/_index.md") %}
 <h2>
   {{- section.title -}}
 </h2>
@@ -14,4 +15,5 @@
   <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
   {%- endfor %}
 </ul>
+{%- endfor %}
 {% endblock content %}
