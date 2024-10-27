@@ -109,7 +109,9 @@ def main():
 
     # いい感じに合体
     result = list(others)
+    result += [b"\n"]
     result += program_without_use(program)
+    result += [b"\n"]
     for crate_path in sorted(crate_paths):
         with open(crate_path, "rb") as f:
             result += program_without_use(f.readlines())
@@ -118,6 +120,7 @@ def main():
     p = subprocess.run(["rustfmt", "--config", "imports_granularity=Crate,group_imports=StdExternalCrate"],
                        input=b"".join(result), stdout=subprocess.PIPE)
     result = p.stdout.splitlines(keepends=True)
+    result[-1] = result[-1].removesuffix(b"\n")
 
     # 結果を出力
     sys.stdout.buffer.write(b"".join(result))
