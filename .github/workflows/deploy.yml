@@ -27,7 +27,7 @@ jobs:
         with:
           python-version: '3.13' 
       - name: Run bundle_all.py
-        run: python3 bundle_all.py
+        run: python3 ./docs/bundle_all.py
       - name: Build only
         uses: shalzz/zola-deploy-action@v0.19.2
         env:
@@ -49,7 +49,7 @@ jobs:
         with:
           python-version: '3.13' 
       - name: Run bundle_all.py
-        run: python3 bundle_all.py
+        run: python3 ./docs/bundle_all.py
       - name: Build and deploy
         uses: shalzz/zola-deploy-action@v0.19.2
         env:

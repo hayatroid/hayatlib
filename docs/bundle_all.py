@@ -26,7 +26,7 @@ def bundle(root_from: Path, root_to: Path):
 
             # python3 bundle.py path_from の実行結果を path_to に保存する
             program = subprocess.run(
-                ["python3", "bundle.py", path_from], stdout=subprocess.PIPE).stdout
+                ["python3", "./docs/bundle.py", path_from], stdout=subprocess.PIPE).stdout
             with open(path_to, "wb") as f:
                 f.write(program)
 
