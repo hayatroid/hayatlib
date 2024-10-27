@@ -25,4 +25,4 @@ input! {
 ```
 
 ## Verified with
-- [提出 #59144917 - 競技プログラミングの鉄則　演習問題集](https://atcoder.jp/contests/tessoku-book/submissions/59144917)<br>{{ badge(path="examples/template/query.rs") }}
+- [提出 #59144917 - 競技プログラミングの鉄則　演習問題集](https://atcoder.jp/contests/tessoku-book/submissions/59144917)<br>{{ badge(path="examples/tessoku_book_ay.rs") }}
