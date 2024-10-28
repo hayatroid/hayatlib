@@ -1,5 +1,5 @@
 # hayatlib/docs
-`../src` と `../examples` をいい感じに bundle して，それを埋め込んだドキュメントを [Zola](https://www.getzola.org/) で生成しています．
+`hayatlib/src` と `hayatlib/examples` をいい感じに bundle して，それを埋め込んだドキュメントを [Zola](https://www.getzola.org/) で生成しています．
 
 ## ドキュメント生成の流れ
 GitHub Actions で以下を行っています．

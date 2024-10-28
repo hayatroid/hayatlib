@@ -6,4 +6,4 @@ hayatroid の競プロライブラリです。
 
 ドキュメントはこちら👉 https://lib.hayatro.id
 
-ドキュメント生成についてはこちら👉 [/docs](/docs)
+ドキュメント生成についてはこちら👉 [/docs](/docs/README.md)
