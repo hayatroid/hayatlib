@@ -22,6 +22,6 @@ fn add(a: u64, b: u64) -> u64 {
 }
 ```
 
-2. `python3 bundle_all.py` で `../src` 以下と `../examples` 以下のファイルに対して `bundle.py` を呼び出し，出力結果を `static` 以下（e.g. `static/src/sample/add_twice.rs`）に保存しています．
+2. `python3 bundle_all.py` で `hayatlib/src` 以下と `hayatlib/examples` 以下のファイルに対して `bundle.py` を呼び出し，出力結果を `hayatlib/docs` 以下（e.g. `hayatlib/docs/src/sample/add_twice.rs`）に保存しています．
 3. Zola 側で `{{ load_data(path="src/sample/add_twice.rs") }}` などとするとファイルの埋め込みができます．
 4. 最後に `zola build` をしています．

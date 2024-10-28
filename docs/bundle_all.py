@@ -31,5 +31,5 @@ def bundle(root_from: Path, root_to: Path):
                 f.write(program)
 
 
-bundle(Path("../src").absolute(), Path("./static/src").absolute())
-bundle(Path("../examples").absolute(), Path("./static/examples").absolute())
+bundle(Path("../src").absolute(), Path("./src").absolute())
+bundle(Path("../examples").absolute(), Path("./examples").absolute())
