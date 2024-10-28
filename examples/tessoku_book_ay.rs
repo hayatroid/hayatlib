@@ -1,4 +1,4 @@
-use hayatlib::template::query::Query;
+use hayatlib::io::query::Query;
 use proconio::input;
 
 fn main() {

@@ -4,7 +4,7 @@ description = "クエリを一括で受け取れるような列挙型を実装�
 weight = 1
 +++
 
-{{ badge(path="src/template/query.rs") }}
+{{ badge(path="src/io/query.rs") }}
 
 ## 概要
 ```rs
@@ -21,7 +21,7 @@ input! {
 
 {{ copy_btn() }}
 ```rs
-{{ cat(path="src/template/query.rs") }}
+{{ cat(path="src/io/query.rs") }}
 ```
 
 ## Verified with
