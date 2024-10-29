@@ -23,13 +23,4 @@ weight = 2
 ```
 
 ## Verified with
-- [Submission #245535](https://judge.yosupo.jp/submission/245535)<br>{{ badge(path="examples/primality_test.rs") }}
-
-## 補足
-`is_witness` の内部は下記のようにワンライナーでも書けて，こちらの方がわかりやすいと思う．
-しかし都度 `modpow` を呼び出すため 2 倍程度遅くなってしまった（[Submission #245537](https://judge.yosupo.jp/submission/245537)）．
-```rs
-a != 0
-&& modpow(a, d, n) != 1
-&& (0..s).all(|i| modpow(a, d << i, n) != n - 1)
-```
+- [Submission #245537](https://judge.yosupo.jp/submission/245537)<br>{{ badge(path="examples/primality_test.rs") }}
