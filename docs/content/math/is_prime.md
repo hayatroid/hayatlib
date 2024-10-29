@@ -4,7 +4,7 @@ description = "非負整数 n を受け取り、n が素数かどうかを返し
 weight = 1
 +++
 
-{{ badge(path="src/math/is_prime.rs") }}
+{{ badge(path="docs/content/math/is_prime.md") }}
 
 ## 概要
 非負整数 $n$ を受け取り，$n$ が素数かどうかを返す．
@@ -22,4 +22,4 @@ weight = 1
 ```
 
 ## Verified with
-- [提出 #59254998 - アルゴリズムと数学　演習問題集](https://atcoder.jp/contests/math-and-algorithm/submissions/59254998)<br>{{ badge(path="examples/math_and_algorithm_l.rs") }}
+- [提出 #59254998 - アルゴリズムと数学　演習問題集](https://atcoder.jp/contests/math-and-algorithm/submissions/59254998)

@@ -4,7 +4,7 @@ description = "非負整数 a, b, c を受け取り、a + b + c を返します�
 weight = 2
 +++
 
-{{ badge(path="src/sample/add_twice.rs") }}
+{{ badge(path="docs/content/sample/add_twice.md") }}
 
 ## 概要
 非負整数 $a, b, c$ を受け取り，$a + b + c$ を返す．

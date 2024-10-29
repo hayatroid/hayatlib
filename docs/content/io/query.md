@@ -4,7 +4,7 @@ description = "クエリを一括で受け取れるような列挙型を実装�
 weight = 1
 +++
 
-{{ badge(path="src/io/query.rs") }}
+{{ badge(path="docs/content/io/query.md") }}
 
 ## 概要
 ```rs
@@ -25,4 +25,4 @@ input! {
 ```
 
 ## Verified with
-- [提出 #59199965 - 競技プログラミングの鉄則　演習問題集](https://atcoder.jp/contests/tessoku-book/submissions/59199965)<br>{{ badge(path="examples/tessoku_book_ay.rs") }}
+- [提出 #59199965 - 競技プログラミングの鉄則　演習問題集](https://atcoder.jp/contests/tessoku-book/submissions/59199965)

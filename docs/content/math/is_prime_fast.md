@@ -4,7 +4,7 @@ description = "非負整数 n を受け取り、n が素数かどうかを返し
 weight = 2
 +++
 
-{{ badge(path="src/math/is_prime_fast.rs") }}
+{{ badge(path="docs/content/math/is_prime_fast.md") }}
 
 ## 概要
 非負整数 $n$ を受け取り，$n$ が素数かどうかを返す．
@@ -23,4 +23,4 @@ weight = 2
 ```
 
 ## Verified with
-- [Submission #245537](https://judge.yosupo.jp/submission/245537)<br>{{ badge(path="examples/primality_test.rs") }}
+- [Submission #245537](https://judge.yosupo.jp/submission/245537)

@@ -5,5 +5,5 @@ description = "hayatroid の競プロライブラリです。"
 
 hayatroid の競プロライブラリです。
 
-{{ badge(path="src") }}
+{{ badge(path="docs/content") }}
 {{ badge_ac() }}
