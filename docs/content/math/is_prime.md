@@ -22,4 +22,4 @@ weight = 1
 ```
 
 ## Verified with
-- [Run #9796363 < hayatroid < Solutions | Aizu Online Judge](https://onlinejudge.u-aizu.ac.jp/solutions/problem/ALDS1_1_C/review/9796363/hayatroid/Rust)<br>{{ badge(path="examples/ALDS1_1_C.rs") }}
+- [提出 #59254998 - アルゴリズムと数学　演習問題集](https://atcoder.jp/contests/math-and-algorithm/submissions/59254998)<br>{{ badge(path="examples/math_and_algorithm_l.rs") }}
