@@ -5,7 +5,7 @@
   {{- section.title -}}
 </h1>
 {{ section.content | safe }}
-{%- for section in ["io"] %}
+{%- for section in ["io", "math"] %}
 {%- set section = get_section(path=section~"/_index.md") %}
 <h2>
   {{- section.title -}}
