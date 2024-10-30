@@ -141,9 +141,10 @@ def main():
     result += [b"\n"]
     if not program[0].startswith(b"fn main()"):
         result += [begin(filepath)]
-    result += program
-    if not program[0].startswith(b"fn main()"):
+        result += program
         result += [end(filepath)]
+    else:
+        result += program
     result += [b"\n"]
     result += crate_program
 
