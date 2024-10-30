@@ -22,4 +22,4 @@ weight = 1
 ```
 
 ## Verified with
-- [提出 #59254998 - アルゴリズムと数学　演習問題集](https://atcoder.jp/contests/math-and-algorithm/submissions/59254998)
+- [提出 #59275022 - アルゴリズムと数学　演習問題集](https://atcoder.jp/contests/math-and-algorithm/submissions/59275022)
