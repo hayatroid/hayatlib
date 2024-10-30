@@ -4,7 +4,7 @@
 ## ドキュメント生成の流れ
 GitHub Actions で以下を行っています．
 
-1. `bundle.py` はライブラリをいい感じに bundle してくれるやつです（雑に書いており，完全に自分用となっています）．
+1. `bundle.py` はライブラリをいい感じに bundle してくれるやつです（雑に書いており，完全に自分用となってしまっています）．
 ```
 ❯ cat ../src/sample/add_twice.rs
 use super::add::add;
@@ -12,6 +12,7 @@ use super::add::add;
 pub fn add_twice(a: u64, b: u64, c: u64) -> u64 {
     add(add(a, b), c)
 }
+
 ❯ python3 bundle.py ../src/sample/add_twice.rs
 fn add_twice(a: u64, b: u64, c: u64) -> u64 {
     add(add(a, b), c)
