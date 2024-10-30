@@ -13,7 +13,7 @@ def crate_to_path(line: bytes) -> Path:
     assert line.startswith(b"use hayatlib") or line.startswith(b"use crate")
 
     # "use crate::a::b::c;" を Path("./src/a/b.rs") に
-    filepath = Path("./src", *map(lambda x: x.decode(),
+    filepath = Path("../src", *map(lambda x: x.decode(),
                     line.split(b"::")[1: -1])).with_suffix(".rs").absolute()
 
     # ファイルが存在するかチェック
@@ -79,7 +79,23 @@ def program_without_use(program: list[bytes]) -> list[bytes]:
     # pub を消す
     program = [line.replace(b"pub ", b"") for line in program]
 
+    # 前後の改行を削っておく
+    while program[0] == b"\n":
+        program = program[1:]
+    while program[-1] == b"\n":
+        program = program[:-1]
+
     return program
+
+
+# ライブラリの境界の始まりを示す区切り文字
+def begin(path: Path) -> bytes:
+    return f"// 👇👇👇👇👇👇👇👇👇👇👇👇 {path.parent.name}/{path.name.removesuffix(".rs")} 👇👇👇👇👇👇👇👇👇👇👇👇\n".encode()
+
+
+# ライブラリの境界の終わりを示す区切り文字
+def end(path: Path) -> bytes:
+    return f"// 👆👆👆👆👆👆👆👆👆👆👆👆 {path.parent.name}/{path.name.removesuffix(".rs")} 👆👆👆👆👆👆👆👆👆👆👆👆\n".encode()
 
 
 def main():
@@ -107,14 +123,29 @@ def main():
     # program が依存するファイルのパスと use の行を集めてくる
     crate_paths, others = collect_dependencies(program, filepath)
 
-    # いい感じに合体
-    result = list(others)
-    result += [b"\n"]
-    result += program_without_use(program)
-    result += [b"\n"]
+    # program が依存するプログラムを 👇👆 で囲って集めてくる
+    crate_program = []
     for crate_path in sorted(crate_paths):
         with open(crate_path, "rb") as f:
-            result += program_without_use(f.readlines())
+            crate_program += [begin(crate_path)]
+            crate_program += program_without_use(f.readlines())
+            crate_program += [end(crate_path)]
+            crate_program += [b"\n"]
+
+    # program 前後の改行を削っておく（先頭が fn main() か判定するため）
+    program = program_without_use(program)
+
+    # いい感じに合体する
+    # src ディレクトリにあるファイルの場合（fn main() で始まらない場合）は自身も 👇👆 で囲う
+    result = list(others)
+    result += [b"\n"]
+    if not program[0].startswith(b"fn main()"):
+        result += [begin(filepath)]
+    result += program
+    if not program[0].startswith(b"fn main()"):
+        result += [end(filepath)]
+    result += [b"\n"]
+    result += crate_program
 
     # imports_granularity=Crate,group_imports=StdExternalCrate で整形
     p = subprocess.run(["rustfmt", "--config", "imports_granularity=Crate,group_imports=StdExternalCrate"],
