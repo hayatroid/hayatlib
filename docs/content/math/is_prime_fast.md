@@ -24,4 +24,4 @@ weight = 2
 ```
 
 ## Verified with
-- [Submission #245537](https://judge.yosupo.jp/submission/245537)
+- [Submission #245735](https://judge.yosupo.jp/submission/245735)
