@@ -20,10 +20,17 @@ pub fn is_prime(n: u64) -> bool {
         if a == 0 {
             return false;
         }
-        if pow_mod(a, d, n) == 1 {
+        let mut x = pow_mod(a, d, n);
+        if x == 1 {
             return false;
         }
-        (0..s).all(|i| pow_mod(a, d << i, n) != n - 1)
+        for _ in 0..s {
+            if x == n - 1 {
+                return false;
+            }
+            x = (x as u128 * x as u128 % n as u128) as u64;
+        }
+        true
     };
     let a = [2, 325, 9375, 28178, 450775, 9780504, 1795265022];
     a.iter().all(|&a| !is_witness_of_n(a % n))
