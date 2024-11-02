@@ -15,29 +15,22 @@ fn factorize_inner(n: u64) -> Vec<u64> {
     if is_prime(n) {
         return vec![n];
     }
-    let non_trivial_divisor_of = |n: u64| -> u64 {
-        if n % 2 == 0 {
-            return 2;
-        }
-        for step in 1.. {
-            let f = |x: u64| -> u64 { ((x as u128 * x as u128 + step as u128) % n as u128) as u64 };
+    let divisor = (1..)
+        .find_map(|step| {
+            let f = |x| ((x as u128 * x as u128 + step as u128) % n as u128) as u64;
             let mut x = step;
             let mut y = f(x);
-            let mut d = 1;
+            let mut d = if n % 2 == 0 { 2 } else { 1 };
             while d == 1 {
                 x = f(x);
                 y = f(f(y));
                 d = gcd(x.abs_diff(y), n);
             }
-            if d != n {
-                return d;
-            }
-        }
-        unreachable!()
-    };
-    let d = non_trivial_divisor_of(n);
-    let mut l = factorize_inner(d);
-    let r = factorize_inner(n / d);
+            Some(d).filter(|&d| d != n)
+        })
+        .unwrap();
+    let mut l = factorize_inner(divisor);
+    let r = factorize_inner(n / divisor);
     l.extend(r);
     l
 }
