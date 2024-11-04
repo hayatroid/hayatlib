@@ -4,7 +4,7 @@ description = "非負整数 n を受け取り、n が素数かどうかを返し
 weight = 1
 +++
 
-{{ badge(path="docs/content/math/is_prime.md") }}
+{{ badge() }}
 
 ## 概要
 非負整数 $n$ を受け取り，$n$ が素数かどうかを返す．
@@ -16,7 +16,7 @@ weight = 1
 - $O(\sqrt{n})$
 
 ## 実装
-{{ program(path="src/math/is_prime.md") }}
+{{ program() }}
 
 ## Verified with
 - [提出 #59275022 - アルゴリズムと数学　演習問題集](https://atcoder.jp/contests/math-and-algorithm/submissions/59275022)

@@ -1,5 +1,10 @@
-<a class="badges" href="https://github.com/hayatroid/hayatlib/
-  {%- if page -%} blob {%- else -%} tree {%- endif -%}
-/main/{{ path | safe }}" target="_blank">
+{%- if section -%}
+<a class="badges" href="https://github.com/hayatroid/hayatlib" target="_blank">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/hayatroid/hayatlib?logo=github">
+</a>
+{%- else -%}
+{%- set path = "docs/content/" ~ page.relative_path -%}
+<a class="badges" href="https://github.com/hayatroid/hayatlib/blob/main/{{ path }}" target="_blank">
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/hayatroid/hayatlib?path={{ path | safe | urlencode_strict }}&logo=github">
 </a>
+{%- endif -%}

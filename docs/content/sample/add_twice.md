@@ -4,7 +4,7 @@ description = "非負整数 a, b, c を受け取り、a + b + c を返します�
 weight = 2
 +++
 
-{{ badge(path="docs/content/sample/add_twice.md") }}
+{{ badge() }}
 
 ## 概要
 非負整数 $a, b, c$ を受け取り，$a + b + c$ を返す．
@@ -17,4 +17,4 @@ weight = 2
 $O(1)$
 
 ## 実装
-{{ program(path="src/sample/add_twice.md") }}
+{{ program() }}

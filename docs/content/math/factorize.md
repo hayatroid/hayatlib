@@ -4,7 +4,7 @@ description = "正の整数 n を受け取り、n の素因数を昇順に列挙
 weight = 3
 +++
 
-{{ badge(path="docs/content/math/factorize.md") }}
+{{ badge() }}
 
 ## 概要
 正の整数 $n$ を受け取り，$n$ の素因数を昇順に列挙する．
@@ -17,7 +17,7 @@ weight = 3
 - $O(\sqrt{n})$
 
 ## 実装
-{{ program(path="src/math/factorize.md") }}
+{{ program() }}
 
 ## Verified with
 - [提出 #59341432 - アルゴリズムと数学　演習問題集](https://atcoder.jp/contests/math-and-algorithm/submissions/59341432)

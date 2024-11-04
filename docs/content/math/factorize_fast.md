@@ -4,7 +4,7 @@ description = "正の整数 n を受け取り、n の素因数を昇順に列挙
 weight = 4
 +++
 
-{{ badge(path="docs/content/math/factorize_fast.md") }}
+{{ badge() }}
 
 ## 概要
 正の整数 $n$ を受け取り，$n$ の素因数を昇順に列挙する．
@@ -19,7 +19,7 @@ weight = 4
     - [$n \leq 10^{18}$ のとき最悪でも 12 万回程度の `gcd` 呼び出し（再帰的に呼び出されるものを除く）で $n$ の非自明な約数を 1 つ見つけられるようである](https://lpha-z.hatenablog.com/entry/2023/01/15/231500)．
 
 ## 実装
-{{ program(path="src/math/factorize_fast.md") }}
+{{ program() }}
 
 ## Verified with
 - [Submission #246811](https://judge.yosupo.jp/submission/246811)

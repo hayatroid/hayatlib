@@ -4,7 +4,7 @@ description = "非負整数 a, b を受け取り、a + b を返します。"
 weight = 1
 +++
 
-{{ badge(path="docs/content/sample/add.md") }}
+{{ badge() }}
 
 ## 概要
 非負整数 $a, b$ を受け取り，$a + b$ を返す．
@@ -17,4 +17,4 @@ weight = 1
 $O(1)$
 
 ## 実装
-{{ program(path="src/sample/add.md") }}
+{{ program() }}

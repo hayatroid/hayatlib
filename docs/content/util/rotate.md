@@ -4,7 +4,7 @@ description = "2 次元配列 $A$ を 90 度回転します。"
 weight = 2
 +++
 
-{{ badge(path="docs/content/util/rotate.md") }}
+{{ badge() }}
 
 ## 概要
 2 次元配列 $A$ を 90 度回転する．\
@@ -15,7 +15,7 @@ weight = 2
     - [2 次元配列の転置](../transpose) の制約に合わせた．
 
 ## 実装
-{{ program(path="src/util/rotate.md") }}
+{{ program() }}
 
 ## Verified with
 - [提出 #59445479 - AtCoder Beginner Contest 036](https://atcoder.jp/contests/abc036/submissions/59445479)

@@ -4,7 +4,7 @@ description = "2 次元配列 $A$ を転置します。"
 weight = 1
 +++
 
-{{ badge(path="docs/content/util/transpose.md") }}
+{{ badge() }}
 
 ## 概要
 2 次元配列 $A$ を転置する．
@@ -13,7 +13,7 @@ weight = 1
 - $A$ の各行の長さが一致していること．
 
 ## 実装
-{{ program(path="src/util/transpose.md") }}
+{{ program() }}
 
 ## Verified with
 - [提出 #59445489 - AtCoder Beginner Contest 237](https://atcoder.jp/contests/abc237/submissions/59445489)
