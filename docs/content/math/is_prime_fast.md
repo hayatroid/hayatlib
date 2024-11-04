@@ -4,7 +4,7 @@ description = "非負整数 n を受け取り、n が素数かどうかを返し
 weight = 2
 +++
 
-{{ badge(path="docs/content/math/is_prime_fast.md") }}
+{{ badge() }}
 
 ## 概要
 非負整数 $n$ を受け取り，$n$ が素数かどうかを返す．

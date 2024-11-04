@@ -4,7 +4,7 @@ description = "2 次元配列 $A$ を 90 度回転します。"
 weight = 2
 +++
 
-{{ badge(path="docs/content/util/rotate.md") }}
+{{ badge() }}
 
 ## 概要
 2 次元配列 $A$ を 90 度回転する．\

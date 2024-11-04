@@ -4,7 +4,7 @@ description = "正の整数 n を受け取り、n の素因数を昇順に列挙
 weight = 3
 +++
 
-{{ badge(path="docs/content/math/factorize.md") }}
+{{ badge() }}
 
 ## 概要
 正の整数 $n$ を受け取り，$n$ の素因数を昇順に列挙する．

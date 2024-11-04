@@ -4,7 +4,7 @@ description = "2 次元配列 $A$ を転置します。"
 weight = 1
 +++
 
-{{ badge(path="docs/content/util/transpose.md") }}
+{{ badge() }}
 
 ## 概要
 2 次元配列 $A$ を転置する．

@@ -4,7 +4,7 @@ description = "クエリを一括で受け取れるような列挙型を実装�
 weight = 1
 +++
 
-{{ badge(path="docs/content/io/query.md") }}
+{{ badge() }}
 
 ## 概要
 たとえばクエリ 1 は `1 x y`，クエリ 2 は `2 x` というように，クエリ毎に長さが異なるものを一括で受け取るのは難しい．
