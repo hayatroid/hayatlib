@@ -21,7 +21,7 @@ weight = 4
 {{ program(path="src/math/factorize_fast.md") }}
 
 ## Verified with
-- [Submission #246461](https://judge.yosupo.jp/submission/246461)
+- [Submission #246801](https://judge.yosupo.jp/submission/246801)
 
 ## 参考
 - [ポラード・ロー素因数分解法 - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%A9%E3%83%BC%E3%83%89%E3%83%BB%E3%83%AD%E3%83%BC%E7%B4%A0%E5%9B%A0%E6%95%B0%E5%88%86%E8%A7%A3%E6%B3%95)

@@ -17,10 +17,13 @@ fn factorize_inner(n: u64) -> Vec<u64> {
     }
     let divisor = (1..)
         .find_map(|step| {
+            if n % 2 == 0 {
+                return Some(2);
+            }
             let f = |x| ((x as u128 * x as u128 + step as u128) % n as u128) as u64;
             let mut x = step;
             let mut y = f(x);
-            let mut d = if n % 2 == 0 { 2 } else { 1 };
+            let mut d = 1;
             while d == 1 {
                 x = f(x);
                 y = f(f(y));
