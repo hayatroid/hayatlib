@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
+:root {
+  container-type: inline-size;
+
+  background-color: #f9f9f9;
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: #120c0e;
+  }
+}
+
 body {
   font-size: 1.6rem;
 }
@@ -8,10 +17,24 @@ code {
   font-family: 'Fira Code', monospace;
 }
 
-.z-code {
-  overflow-x: visible;
-  font-size: 14px;
-  line-height: 19px;
+.z-code-wrapper {
+  width: 100cqi;
+  margin: 0 calc(50% - 50cqi) 2.5rem;
+  overflow-x: auto;
+
+  background-color: #f1f1f1;
+  @media screen and (prefers-color-scheme: dark) {
+    background-color: #40363a;
+  }
+
+  .z-code {
+    max-width: calc((1.6 / 1.4) * 38em);
+    margin: 0 auto;
+    overflow-x: visible;
+
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+  }
 }
 
 .badges {
