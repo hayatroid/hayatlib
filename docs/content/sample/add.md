@@ -17,4 +17,4 @@ weight = 1
 $O(1)$
 
 ## 実装
-{{ program(path="src/sample/add.md") }}
+{{ program() }}

@@ -17,4 +17,4 @@ weight = 2
 $O(1)$
 
 ## 実装
-{{ program(path="src/sample/add_twice.md") }}
+{{ program() }}

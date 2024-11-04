@@ -18,7 +18,7 @@ weight = 2
     - $ab \bmod n$ が $O(1)$ で求まるとみなした場合の計算量．実際には定数倍重め．
 
 ## 実装
-{{ program(path="src/math/is_prime_fast.md") }}
+{{ program() }}
 
 ## Verified with
 - [Submission #246460](https://judge.yosupo.jp/submission/246460)

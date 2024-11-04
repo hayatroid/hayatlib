@@ -13,7 +13,7 @@ weight = 1
 - $A$ の各行の長さが一致していること．
 
 ## 実装
-{{ program(path="src/util/transpose.md") }}
+{{ program() }}
 
 ## Verified with
 - [提出 #59445489 - AtCoder Beginner Contest 237](https://atcoder.jp/contests/abc237/submissions/59445489)
