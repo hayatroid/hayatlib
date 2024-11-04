@@ -1,13 +1,17 @@
-use super::transpose::transpose;
+use super::transpose::Transpose;
 
-pub fn rotate_ccw<T: Clone>(v: &Vec<Vec<T>>) -> Vec<Vec<T>> {
-    let mut res = transpose(v);
-    res.reverse();
-    res
+pub trait Rotate: Transpose {
+    fn rotate_ccw(&mut self);
+    fn rotate_cw(&mut self);
 }
 
-pub fn rotate_cw<T: Clone>(v: &Vec<Vec<T>>) -> Vec<Vec<T>> {
-    let mut v = v.clone();
-    v.reverse();
-    transpose(&v)
+impl<T: Clone> Rotate for Vec<Vec<T>> {
+    fn rotate_ccw(&mut self) {
+        self.transpose();
+        self.reverse();
+    }
+    fn rotate_cw(&mut self) {
+        self.reverse();
+        self.transpose();
+    }
 }

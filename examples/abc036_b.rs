@@ -1,14 +1,14 @@
-use hayatlib::matrix::rotate::rotate_cw;
+use hayatlib::matrix::rotate::Rotate;
 use itertools::Itertools;
 use proconio::{input, marker::Chars};
 
 fn main() {
     input! {
         n: usize,
-        s: [Chars; n],
+        mut s: [Chars; n],
     }
-    let ans = rotate_cw(&s);
-    for ans in ans {
-        println!("{}", ans.iter().join(""));
+    s.rotate_cw();
+    for s in s {
+        println!("{}", s.iter().join(""));
     }
 }
