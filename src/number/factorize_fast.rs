@@ -1,4 +1,4 @@
-use crate::math::is_prime_fast::is_prime;
+use crate::number::is_prime_fast::is_prime;
 
 fn gcd(x: u64, y: u64) -> u64 {
     if y == 0 {

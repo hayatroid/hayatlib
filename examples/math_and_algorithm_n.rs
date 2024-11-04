@@ -1,4 +1,4 @@
-use hayatlib::math::factorize::factorize;
+use hayatlib::number::factorize::factorize;
 use itertools::Itertools;
 use proconio::input;
 

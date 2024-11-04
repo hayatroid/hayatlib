@@ -1,6 +1,6 @@
 use std::io::{read_to_string, stdin};
 
-use hayatlib::math::is_prime_fast::is_prime;
+use hayatlib::number::is_prime_fast::is_prime;
 
 fn main() {
     let stdin = read_to_string(stdin()).unwrap();

@@ -1,6 +1,6 @@
 use std::io::{read_to_string, stdin};
 
-use hayatlib::math::factorize_fast::factorize;
+use hayatlib::number::factorize_fast::factorize;
 
 fn main() {
     let stdin = read_to_string(stdin()).unwrap();

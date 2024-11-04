@@ -1,4 +1,4 @@
-use hayatlib::math::is_prime::is_prime;
+use hayatlib::number::is_prime::is_prime;
 use proconio::input;
 
 fn main() {
