@@ -1,8 +1,14 @@
-pub fn transpose<T: Clone>(v: &Vec<Vec<T>>) -> Vec<Vec<T>> {
-    if v.len() == 0 {
-        return vec![]
+pub trait Transpose {
+    fn transpose(&mut self);
+}
+
+impl<T: Clone> Transpose for Vec<Vec<T>> {
+    fn transpose(&mut self) {
+        if self.len() == 0 {
+            return;
+        }
+        *self = (0..self[0].len())
+            .map(|j| (0..self.len()).map(|i| self[i][j].clone()).collect())
+            .collect()
     }
-    (0..v[0].len())
-        .map(|j| (0..v.len()).map(|i| v[i][j].clone()).collect())
-        .collect()
 }
