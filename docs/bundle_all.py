@@ -14,7 +14,7 @@ def bundle(root_from: Path, root_to: Path):
         for file in files:
             # bundle するファイルのパスと，bundle したファイルの保存先パス
             path_from = Path(dir) / file
-            path_to = root_to / path_from.relative_to(root_from)
+            path_to = root_to / path_from.relative_to(root_from).with_suffix(".md")
 
             # path_from が lib.rs の場合や，sample ディレクトリが存在するときの sample.rs の場合などは除外する
             if path_from.name == "lib.rs" or (path_from.parent / path_from.name.removesuffix(".rs")).is_dir():
@@ -24,9 +24,10 @@ def bundle(root_from: Path, root_to: Path):
             path_to.parent.mkdir(parents=True, exist_ok=True)
             path_to.touch(exist_ok=True)
 
-            # python3 bundle.py path_from の実行結果を path_to に保存する
+            # python3 bundle.py path_from の実行結果を md の形式にして path_to に保存する
             program = subprocess.run(
                 ["python3", "bundle.py", path_from], stdout=subprocess.PIPE).stdout
+            program = b"```rs\n" + program + b"\n```"
             with open(path_to, "wb") as f:
                 f.write(program)
 

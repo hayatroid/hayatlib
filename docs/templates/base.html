@@ -59,7 +59,7 @@
   {#- copy button #}
   <script>
     const copyToClipboard = (elem) => {
-      const res = elem.nextElementSibling.textContent;
+      const res = elem.nextElementSibling.firstElementChild.textContent;
       navigator.clipboard.writeText(res);
       elem.textContent = "Copied!";
     };

@@ -17,7 +17,4 @@ weight = 2
 $O(1)$
 
 ## 実装
-{{ copy_btn() }}
-```rs
-{{ cat(path="src/sample/add_twice.rs") }}
-```
+{{ program(path="src/sample/add_twice.md") }}

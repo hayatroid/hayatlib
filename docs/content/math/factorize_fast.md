@@ -18,10 +18,7 @@ weight = 4
 - 厳密な解析は未解決問題である．
 
 ## 実装
-{{ copy_btn() }}
-```rs
-{{ cat(path="src/math/factorize_fast.rs") }}
-```
+{{ program(path="src/math/factorize_fast.md") }}
 
 ## Verified with
 - [Submission #246461](https://judge.yosupo.jp/submission/246461)

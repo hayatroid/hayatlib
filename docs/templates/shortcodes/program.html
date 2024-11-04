@@ -1,0 +1,4 @@
+<button onclick="copyToClipboard(this)">Copy</button>
+<div class="z-code-wrapper">
+  {{- load_data(path=path) | markdown | safe -}}
+</div>

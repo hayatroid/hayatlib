@@ -17,10 +17,7 @@ weight = 3
 - $O(\sqrt{n})$
 
 ## 実装
-{{ copy_btn() }}
-```rs
-{{ cat(path="src/math/factorize.rs") }}
-```
+{{ program(path="src/math/factorize.md") }}
 
 ## Verified with
 - [提出 #59341432 - アルゴリズムと数学　演習問題集](https://atcoder.jp/contests/math-and-algorithm/submissions/59341432)
