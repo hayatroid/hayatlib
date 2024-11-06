@@ -1,4 +1,4 @@
-use hayatlib::matrix::rotate::Rotate;
+use hayatlib::util::rotate::Rotate;
 use itertools::Itertools;
 use proconio::{input, marker::Chars};
 

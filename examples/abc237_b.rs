@@ -1,4 +1,4 @@
-use hayatlib::matrix::transpose::Transpose;
+use hayatlib::util::transpose::Transpose;
 use itertools::Itertools;
 use proconio::input;
 
