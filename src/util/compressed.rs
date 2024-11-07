@@ -8,7 +8,7 @@ impl<T: Clone + Ord> Compressed for Vec<T> {
         z.sort();
         z.dedup();
         self.iter()
-            .map(|a| z.binary_search(&a.clone()).unwrap().try_into().unwrap())
+            .map(|a| z.binary_search(&a.clone()).unwrap())
             .collect()
     }
 }

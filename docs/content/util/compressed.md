@@ -16,4 +16,4 @@ weight = 1
 {{ program() }}
 
 ## Verified with
-- [提出 #59505910 - AtCoder Beginner Contest 036](https://atcoder.jp/contests/abc036/submissions/59505910)
+- [提出 #59506761 - AtCoder Beginner Contest 036](https://atcoder.jp/contests/abc036/submissions/59506761)
