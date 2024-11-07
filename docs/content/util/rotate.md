@@ -1,6 +1,6 @@
 +++
 title = "2 次元配列の 90 度回転"
-description = "2 次元配列 $A$ を 90 度回転します。"
+description = "2 次元配列 A を 90 度回転します。"
 weight = 3
 +++
 

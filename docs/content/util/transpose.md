@@ -1,6 +1,6 @@
 +++
 title = "2 次元配列の転置"
-description = "2 次元配列 $A$ を転置します。"
+description = "2 次元配列 A を転置します。"
 weight = 2
 +++
 

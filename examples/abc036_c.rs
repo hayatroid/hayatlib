@@ -1,13 +1,13 @@
-use hayatlib::util::compress::Compress;
+use hayatlib::util::compressed::Compressed;
 use proconio::input;
 
 fn main() {
     input! {
         n: usize,
-        mut a: [u32; n],
+        a: [u32; n],
     }
-    a.compress();
-    for a in a {
-        println!("{}", a);
+    let b = a.compressed();
+    for b in b {
+        println!("{}", b);
     }
 }
