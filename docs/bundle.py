@@ -57,7 +57,12 @@ def collect_dependencies(program: list[bytes], path: Path) -> tuple[set[Path], s
             crate_paths.add(crate_path)
             # 依存するファイルからも再帰的に集めてきて，和集合をとる
             with open(crate_path, "rb") as f:
-                c, o = collect_dependencies(f.readlines(), crate_path)
+                pro = f.read().splitlines(keepends=True)
+                # use の行を解析するため，imports_granularity=Item で整形
+                p = subprocess.run(["rustfmt", "--config", "imports_granularity=Item"],
+                                   input=b"".join(pro), stdout=subprocess.PIPE)
+                pro = p.stdout.splitlines(keepends=True)
+                c, o = collect_dependencies(pro, crate_path)
                 crate_paths |= c
                 others |= o
         elif line.startswith(b"use"):
@@ -127,8 +132,13 @@ def main():
     crate_program = []
     for crate_path in sorted(crate_paths):
         with open(crate_path, "rb") as f:
+            pro = f.read().splitlines(keepends=True)
+            # use の行を解析するため，imports_granularity=Item で整形
+            p = subprocess.run(["rustfmt", "--config", "imports_granularity=Item"],
+                               input=b"".join(pro), stdout=subprocess.PIPE)
+            pro = p.stdout.splitlines(keepends=True)
             crate_program += [begin(crate_path)]
-            crate_program += program_without_use(f.readlines())
+            crate_program += program_without_use(pro)
             crate_program += [end(crate_path)]
             crate_program += [b"\n"]
 
