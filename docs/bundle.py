@@ -95,12 +95,12 @@ def program_without_use(program: list[bytes]) -> list[bytes]:
 
 # ライブラリの境界の始まりを示す区切り文字
 def begin(path: Path) -> bytes:
-    return f"// 👇👇👇👇👇👇👇👇👇👇👇👇 {path.parent.name}/{path.name.removesuffix(".rs")} 👇👇👇👇👇👇👇👇👇👇👇👇\n".encode()
+    return f"// >>> {path.parent.name}/{path.name.removesuffix(".rs")} >>>\n".encode()
 
 
 # ライブラリの境界の終わりを示す区切り文字
 def end(path: Path) -> bytes:
-    return f"// 👆👆👆👆👆👆👆👆👆👆👆👆 {path.parent.name}/{path.name.removesuffix(".rs")} 👆👆👆👆👆👆👆👆👆👆👆👆\n".encode()
+    return f"// <<< {path.parent.name}/{path.name.removesuffix(".rs")} <<<\n".encode()
 
 
 def main():
@@ -128,7 +128,7 @@ def main():
     # program が依存するファイルのパスと use の行を集めてくる
     crate_paths, others = collect_dependencies(program, filepath)
 
-    # program が依存するプログラムを 👇👆 で囲って集めてくる
+    # program が依存するプログラムを >>> <<< で囲って集めてくる
     crate_program = []
     for crate_path in sorted(crate_paths):
         with open(crate_path, "rb") as f:
@@ -146,7 +146,7 @@ def main():
     program = program_without_use(program)
 
     # いい感じに合体する
-    # src ディレクトリにあるファイルの場合（fn main() で始まらない場合）は自身も 👇👆 で囲う
+    # src ディレクトリにあるファイルの場合（fn main() で始まらない場合）は自身も >>> <<< で囲う
     result = list(others)
     result += [b"\n"]
     if not program[0].startswith(b"fn main()"):
